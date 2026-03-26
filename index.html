@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRACTICE ACTIVITY</title>
+
+    <style>
+        h2 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="font-family: Arial, Helvetica, sans-serif;">Saving Money Progress Tracker</h1>
+    <div class="box">
+        <h2> For loop (Fixed Number of Weeks) </h2>
+        <button onclick="forLoopSaving()"> Start FOR LOOP </button>
+        <div id="forResult"></div>
+    </div>
+    <div class="box">
+        <h2> WHILE LOOP (Save Until Goal) </h2>
+        <button onclick="whileLoopSaving()"> Start WHILE LOOP </button>
+        <div id="whileResult"></div>
+    </div>
+    <div class="box">
+        <h2> DO-WHILE Loop (Save At least Once) </h2>
+        <button onclick="doWhileLoopSaving()"> Start DO WHILE Loop</button>
+        <div id="doWhileResult"></div>
+    </div>
+
+    <script>
+        // FOR LOOP // 
+        function forLoopSaving() {
+            let weeklySave = 1000;
+            let total = 0;
+            let output = "";
+            for (let week = 1; week<=5; week++){
+                total += weeklySave;
+                output += "<p> Week " + week + "Total Savings = Php" + total + "</p>"
+            }
+        document.getElementById("forResult").innerHTML = output;
+        }
+
+        // WHILE LOOP // 
+        function whileLoopSaving(){
+            let weeklySave = 1000;
+            let total = 0;
+            let goal = 10000;
+            let week = 1;
+            let output = "";
+
+            while (total<goal){
+                total += weeklySave;
+                output += "<p> Week" + week + " Total Savings = Php " + total + "</p>";
+            }
+            output += "<strong> Goal Reached! </strong>";
+            document.getElementById("whileResult").innerHTML = output;
+        }
+
+        // DO-WHILE LOOP //
+        function doWhileLoopSaving(){
+            let weeklySave = 2000;
+            let total = 0;
+            let goal = 20000
+            let week = 1;
+            let output ="";
+            do{
+                total+=weeklySave;
+                output += "<pp> Week" + week + " Total Savings = Php " + total + "</p>"; 
+                week++;
+            }while(total<goal);
+            output+= "<strong> Goal Reached! </strong>"
+            document.getElementById("doWhileResult").innerHTML = output;
+        }
+
+    </script>
+    
+</body>
+</html>
